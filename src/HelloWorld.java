@@ -2,22 +2,29 @@ import java.util.Scanner;
 import java.util.Date;
 
 public class HelloWorld {
-    private String greeting = "Hello, World!";
-    public void greet()
 
-    {
-        System.out.println(greeting);
+    private String greeting;
+
+    public HelloWorld(String g) {
+       System.out.println("Hello, World!");
+       this.greeting = g;
     }
 
-    public static void main (String args[]) {
+    public String getGreeting() {
+        return greeting;
+    }
+
+    public static void main (String[] args) {
+        HelloWorld helloworld = new HelloWorld("What is your name?");
+        System.out.println(helloworld.getGreeting());
+
         Scanner sc =new Scanner(System.in);
-        System.out.println("What is your name?");
         String str = sc.next();
         System.out.println("Welcome,"+" "+str+".");
+
+        //set real time
         Date d = new Date();
         System.out.println(d);
-        HelloWorld helloworld;
-        helloworld = new HelloWorld ();
-        helloworld.greet () ;
+
     }
 }
